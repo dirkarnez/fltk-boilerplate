@@ -3,8 +3,9 @@ REM run as Administrator
 cd /d %~dp0
 set DOWNLOAD_DIR=%USERPROFILE%\Downloads
 set DOWNLOAD_DIR_LINUX=%DOWNLOAD_DIR:\=/%
-SET PATH=%DOWNLOAD_DIR%\PortableGit\bin;%DOWNLOAD_DIR%\mingw64;%DOWNLOAD_DIR%\mingw64\bin;%DOWNLOAD_DIR%\cmake-3.22.0-rc1-windows-x86_64\bin;%PATH%
-cmake.exe -G"MinGW Makefiles" -B./build
+SET PATH=%DOWNLOAD_DIR%\PortableGit\bin;%DOWNLOAD_DIR%\mingw64-win32;%DOWNLOAD_DIR%\mingw64-win32\bin;%DOWNLOAD_DIR%\cmake-3.22.2-windows-x86_64\bin;%PATH%
+
+cmake.exe -G"MinGW Makefiles" -DFLTK_ROOT="%DOWNLOAD_DIR_LINUX%/fltk-v1.3.8-mingw" -B./build
 cd build
 
 :rebuild_and_startapp

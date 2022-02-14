@@ -2,9 +2,8 @@ cmake_minimum_required(VERSION 3.14)
 
 project(fltk-boilerplate)
 
-find_package(fltk REQUIRED PATHS 
-    "P:\\Downloads\\cpp-libraries\\fltk-release-1.3.8\\build\\fltk\\CMake"
-)
+
+find_package(fltk REQUIRED PATHS "${FLTK_ROOT}/CMake")
 
 # uncomment this line if using msvc
 # SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /subsystem:windows /ENTRY:mainCRTStartup")
